@@ -4,11 +4,10 @@ require 'yaml/store'
 require 'ostruct'
 require 'date'
 
-
 require 'bundler/setup'
 Bundler.require
 
-
-# put the code to connect to the database here
+#code to connect to database
+ActiveRecord::Base.establish_connection(:adapter => "sqlite3", :database => "db/artists.sqlite")
 
 require_relative "../artist.rb"
